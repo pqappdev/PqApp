@@ -1,12 +1,9 @@
-PqFbApp
+PqApp
 =======
-
-PqFbApp
-
 Bu sınıf bir yii extension'ıdır framework altında extensions klasörü altına eklenmelidir<br/>
 <code>
 	<pre>
-		Yii::import('ext.App');
+		Yii::import('ext.PqApp.App');
 	</pre>
 </code>
 Örnek olarak çağrılıp basitçe kullanımı
