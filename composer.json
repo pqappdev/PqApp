@@ -1,6 +1,7 @@
 {
+	"type": "yii-extension",
 	"name" : "pqappdev/pqapp",
-	"description" : "helper for facebook applications"
+	"description" : "helper for facebook applications",
 	"authors":[
 		{
 			"name"   : "candaş minareci",
@@ -8,6 +9,5 @@
 			"website": "http://www.candasminareci.com"
 		}
 	],
-	"homepage"  : "https://github.com/pqappdev/PqApp",
-	"type": "yii-extension",
+	"homepage"  : "https://github.com/pqappdev/PqApp"
 }
