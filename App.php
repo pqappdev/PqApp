@@ -12,7 +12,7 @@
  *  twitterConfig.class
  *  @todo app sınıfının logları ayrı bir dosya içinde yazılmalı düzgünce loglama işlemi yapılmalı !
  */
-Yii::import('application.extensions.app.*');
+Yii::import('application.vendors.pqappdev.pqapp.app.*');
 /**
  * @todo twitter eklenecek 
  * @todo facebookusersave sınıfı yazılacak
