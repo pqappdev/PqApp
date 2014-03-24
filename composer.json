@@ -9,5 +9,8 @@
 			"website": "http://www.candasminareci.com"
 		}
 	],
-	"homepage"  : "https://github.com/pqappdev/PqApp"
+	"homepage"  : "https://github.com/pqappdev/PqApp",
+    "require" :{
+        "facebook/php-sdk":"v3.2.3"
+    }
 }

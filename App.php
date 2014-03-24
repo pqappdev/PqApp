@@ -13,6 +13,7 @@
  *  @todo app sınıfının logları ayrı bir dosya içinde yazılmalı düzgünce loglama işlemi yapılmalı !
  */
 Yii::import('application.vendors.pqappdev.pqapp.app.*');
+Yii::import('application.vendors.facebook.php-sdk.*');
 /**
  * @todo twitter eklenecek 
  * @todo facebookusersave sınıfı yazılacak
