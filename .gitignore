@@ -1,0 +1,4 @@
+#mac osx files
+.DS_Store
+#Php Storm Dosyaları
+.idea/
