@@ -299,10 +299,6 @@ class facebookUserSave {
         if (in_array('friend', $this->tables)) {
             $this->save_friends();
         }
-//        if (in_array('page', $this->tables)) {
-////            helper::asyncCall($this->config->redirectUri . $this->asynCall . '?app_user_save_likes=0,'.facebookApi::MAX_FQL_REQUEST_LIMIT.$this->async_ext_param );
-//            $this->save_likes();
-//        }
         if (in_array('user_likes', $this->tables)) {
             $this->save_likes();
         }
@@ -527,84 +523,7 @@ class facebookUserSave {
             'user_likes_saved' => 'true'
         );
         $condition = 'uid="'.$this->facebook->user_id.'"';
-        $resultUpdate = Yii::app()->db->createCommand()->update($userTable,$data ,$condition);
-        
-//        $event_req_key = 'app_user_save_likes';
-//
-//        $f_count = Yii::app()->db->createCommand()->select('count(id)')->from($this->table_prefix . 'page_fan')->where('uid="' . $this->facebook->user_id . '"')->queryScalar();
-//
-//        //async call değil ise ve kullanıcı kaydı var ise işlem yapma
-//        if (!isset($_REQUEST[$event_req_key]) && $f_count > 0) {
-//            return 1;
-//        }
-//
-//        $limit_bas = 0;
-//        $limit = facebookApi::MAX_FQL_REQUEST_LIMIT / 2;
-//
-//        $async_limit = null;
-//        if (isset($_REQUEST[$event_req_key])) {
-////            Yii::log('async call geldi ','warning');
-//            $async_limit = explode(',', $_REQUEST[$event_req_key]);
-//            $limit_bas = $async_limit[0];
-//        }
-//
-//
-//        $fql = array(
-//            'page_fan' => sprintf($this->fql_schemas['page_fan'], $this->facebook->user_id, $limit_bas, $limit),
-//            'page' => sprintf($this->fql_schemas['page'], $this->facebook->user_id, $limit_bas, $limit),
-//        );
-//
-//        try {
-//            Yii::log(json_encode($this->facebook->signed_request_decoded), 'info', 'AppAsync');
-//            Yii::log('access_token:' . $this->facebook->access_token, 'info', 'AppAsync');
-//            $response = $this->facebook->fql_api($fql);
-//        } catch (Exception $e) {
-//
-//            Yii::log($e->getMessage(), 'error', 'AppAsync');
-//            Yii::app()->end();
-//        }
-//
-//
-//        $page_fan = $response['data'][0]['fql_result_set'];
-//        $page = $response['data'][1]['fql_result_set'];
-//        $page_fan_count = count($page_fan);
-//        $table = $this->table_prefix . 'page_fan';
-//        foreach ($page_fan as $row) {
-//
-//            $count = Yii::app()->db->createCommand()
-//                    ->select('count(id)')
-//                    ->from($table)
-//                    ->where('uid="' . $row['uid'] . '" and page_id="' . $row['page_id'] . '"')
-//                    ->queryScalar()
-//            ;
-//
-//            if ($count == 0) {
-//                Yii::app()->db->createCommand()->insert($this->table_prefix . 'page_fan', $row);
-//            }
-//        }
-//        $table = $this->table_prefix . 'page';
-//        foreach ($page as $row) {
-//            $count = Yii::app()->db->createCommand()
-//                    ->select('count(id)')
-//                    ->from($table)
-//                    ->where('page_id="' . $row['page_id'] . '"')
-//                    ->queryScalar();
-//            if ($count == 0) {
-//
-//                foreach ($row as $key => $val) {
-//                    if (is_array($val) || is_object($val)) {
-//                        $row[$key] = json_encode($val);
-//                    }
-//                }
-//
-//                Yii::app()->db->createCommand()->insert($table, $row);
-//            }
-//        }
-//
-//        if ($page_fan_count == $limit) {
-//            $adres = $this->config->redirectUri . $this->asynCall . '?' . $event_req_key . '=' . ($limit_bas + 1 * $limit) . ',' . $limit . $this->async_ext_param;
-//            helper::asyncCall($adres);
-//        }
+        Yii::app()->db->createCommand()->update($userTable,$data ,$condition);
     }
 
     protected function save_group() {
